@@ -23,13 +23,13 @@ import cv2 as cv
 from google.colab.patches import cv2_imshow    
 from skimage import io
 
-# file_names = os.listdir('country_pics')
+file_names = os.listdir('country_pics')
 
-# ndvi_list = {}
+ndvi_list = {}
 
-# for name in file_names:
-#   (c, end) = name.split('.')
-#   ndvi_list[c] = name
+for name in file_names:
+  (c, end) = name.split('.')
+  ndvi_list[c] = name
 
 import urllib.request
 import cartopy.feature as cf
@@ -97,13 +97,13 @@ plt.show()
 
 # Getting NDVI Images from the hash table
 
-# ndvi_name = userInput
-# if " " in userInput:
-#   (first, last) = userInput.split(' ')
-#   ndvi_name = first+"_"+last
-# for entry in ndvi_list.keys():
-#   if entry == ndvi_name:
-#     image = io.imread('country_pics/' + ndvi_list[ndvi_name])
-#     image_2 = cv.cvtColor(image, cv.COLOR_BGR2RGB)
-#     cv2_imshow(image_2)
+ndvi_name = userInput
+if " " in userInput:
+  (first, last) = userInput.split(' ')
+  ndvi_name = first+"_"+last
+for entry in ndvi_list.keys():
+  if entry == ndvi_name:
+    image = io.imread('country_pics/' + ndvi_list[ndvi_name])
+    image_2 = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+    cv2_imshow(image_2)
 
